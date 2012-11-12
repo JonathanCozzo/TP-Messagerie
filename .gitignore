@@ -4,3 +4,7 @@
 *.jar
 *.war
 *.ear
+/TP Messagerie/nbproject/
+TP Messagerie/manifest.mf
+
+TP Messagerie/build.xml
