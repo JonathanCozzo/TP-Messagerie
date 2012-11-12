@@ -22,9 +22,9 @@ public interface Serveur extends java.rmi.Remote {
     public void bye(String id)
             throws java.rmi.RemoteException;
 
-    public String[] who()
+    public ArrayList<String> who()
             throws java.rmi.RemoteException;
 
-    public HashMap<Integer, String>[][] refresh(int nbMessages)
+    public Map<Integer, String>[] getMessages(int nbMessages)
             throws java.rmi.RemoteException;
 }
