@@ -25,6 +25,6 @@ public interface Serveur extends java.rmi.Remote {
     public ArrayList<String> who()
             throws java.rmi.RemoteException;
 
-    public Map<Integer, String>[] getMessages(int nbMessages)
+    public ArrayList<Map<Integer, String>> getMessages(int nbMessages)
             throws java.rmi.RemoteException;
 }

@@ -43,10 +43,18 @@ public class Messagerie extends UnicastRemoteObject implements Serveur {
     	return this.listeUsers;
     }
     
-    //Choix arraylist ou hashmapà determiner
-    public Map<Integer, String>[] getMessages(int nbMessages)throws java.rmi.RemoteException  {
-    	Map<Integer, String>[] messages = {this.tableauId, this.tableauMessages};
-    	int[] a = new int[5];
+    public ArrayList<Map<Integer, String>> getMessages(int nbMessages)throws java.rmi.RemoteException  {
+       	ArrayList<Map<Integer, String>> messages = new ArrayList<Map<Integer, String>>();
+    	int i;
+    	Map<Integer, String> tabId = this.tableauId;
+    	Map<Integer, String> tabMessages = this.tableauMessages;
+    	for(i=0; i<nbMessages;i++){
+    		tabId.remove(i);
+    		tabMessages.remove(i);
+    	}
+       	messages.add(0,tabId);
+    	messages.add(1,tabMessages);
+    	return messages;
     }
 
 
