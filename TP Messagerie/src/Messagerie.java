@@ -76,8 +76,7 @@ public class Messagerie extends UnicastRemoteObject implements Serveur {
 		// Création d ’une instance de l’objet messagerie
 		Messagerie obj = new Messagerie();
 		// Calcul de l’URL du serveur
-		URL = "//"+InetAddress.getLocalHost().getHostName()+":"+
-		port+"/mon_serveur";
+		URL = "//127.0.0.1:8080/chatservice";
 		Naming.rebind(URL, obj);
 		} catch (Exception exc) {System.out.println("Error");}
 	}

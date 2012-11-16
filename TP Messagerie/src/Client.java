@@ -18,14 +18,14 @@ public class Client {
     static int nbMessages;
 
     public Client() {
-        this.id = null;
-        this.nbMessages = 0;
+        Client.id = null;
+        Client.nbMessages = 0;
     }
 
     public static void main(String args[]) {
         try {
             // Récupération d'un stub sur l'objet serveur.
-            Messagerie messagerie = (Messagerie) Naming.lookup("//ma_machine/mon_serveur");
+            Messagerie messagerie = (Messagerie) Naming.lookup("//127.0.0.1:8080/chatservice");
 
             BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
             String entree = in.readLine();
